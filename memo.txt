@@ -64,3 +64,9 @@ What you will build
      Try setting the http.proxyHost and http.proxyPort system properties to values appropriate for your environment.
 4) Summary
     Congratulations! You have just developed a simple REST client by using Spring Boot
+
+5) Error occured
+        java.lang.IllegalStateException: Failed to execute CommandLineRunner
+        check github
+        https://github.com/spring-guides/quoters
+

@@ -1,33 +1,61 @@
 package com.example.consumingarestfulwebservice;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import org.springframework.context.annotation.Configuration;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+import java.util.Objects;
+
+
+@Entity
 public class Quote {
-    private String type;
-    private Value value;
+        @Id
+        @GeneratedValue
+        private Long id;
+        private String quote;
 
-    public Quote(){
+        Quote(String quote){
+                this.quote = quote;
+        }
 
-    }
-    public  String getType(){
-        return type;
-    }
+        protected Quote(){}
 
-    public void setType(String type){
-        this.type = type;
-    }
+        public Long getId(){
+                return id;
+        }
 
-    public Value getValue() {
-        return value;
-    }
+        public void setId(Long id){
+                this.id = id;
+        }
 
-    public void setValue(Value value){
-        this.value = value;
-    }
+        public String getQuote(){
+                return quote;
+        }
 
-    @Override
-    public String toString(){
-        return "Quote{"+"type='"+type+'\''+",value="+value+'}';
-    }
+        public void setQuote(String quote){
+                this.quote = quote;
+        }
+
+        @Override
+        public boolean equals(Object o){
+                if(this == o)
+                        return true;
+                if(!(o instanceof Quote))
+                        return false;
+                Quote quote1 = (Quote) o;
+                return Objects.equals(id, quote1.id) && Objects.equals(quote, quote1.quote);
+        }
+
+        @Override
+        public  int hashCode(){
+                return Objects.hash(id, quote);
+        }
+
+        @Override
+        public String toString(){
+                return "Quote{"+"id="+id+", quote='"+quote+'\''+'}';
+        }
+
 }

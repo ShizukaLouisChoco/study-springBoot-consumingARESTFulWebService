@@ -17,7 +17,7 @@ public class ConsumingARestFulWebServiceApplication {
         SpringApplication.run(ConsumingARestFulWebServiceApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder){
         return builder.build();
     }
@@ -28,5 +28,5 @@ public class ConsumingARestFulWebServiceApplication {
             Quote quote = restTemplate.getForObject("http://localhost:8080/api/random",Quote.class);
             log.info(quote.toString());
         };
-    }
+    }*/
 }
