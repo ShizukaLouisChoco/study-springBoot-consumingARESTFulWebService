@@ -47,4 +47,12 @@ What you will build
     The Initalizr creates a class with a main() method
     The following listing shows the class the Initializr creates (at ConsumingRestApplication.java):
 
+    Now you need to add a few other things to the ConsumingRestApplication class to get it to show quotations from our RESTful source
+    You need to add:
+    - A logger, to send output to the log(the console, in this example)
+    - A RestTemplate, which uses the jackson JSON processing library to process the incoming data
+    - A CommandLineRunner that runs the RestTemplate(and, consequently, fetches our quotation) on startup
+    The following listing shows the finished ConsumingRestApplication class
+
+
 
